@@ -3,7 +3,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
-import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, SITE_TAGLINE } from "@/constants/data";
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, SITE_TAGLINE, CONTACT } from "@/constants/data";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -91,7 +91,7 @@ export default function RootLayout({
               },
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+91-99037-90065",
+                telephone: CONTACT.phone,
                 email: CONTACT.email,
                 contactType: "admissions",
               },

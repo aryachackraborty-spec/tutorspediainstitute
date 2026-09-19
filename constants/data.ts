@@ -7,10 +7,10 @@ export const SITE_URL = "https://tutorspedia.in";
 
 // ─── Contact Details ─────────────────────────────────────────────────
 export const CONTACT = {
-  phone: "+91 99037 90065",
-  phoneHref: "tel:+919903790065",
-  whatsapp: "+91 99037 90065",
-  whatsappHref: "https://wa.me/919903790065",
+  phone: "+91 81000 38397",
+  phoneHref: "tel:+918100038397",
+  whatsapp: "+91 81000 38397",
+  whatsappHref: "https://wa.me/918100038397",
   email: "eboardacademy2020@gmail.com",
   address: "Room No. 110, 1st Floor, Diamond Arcade, 1/72 Jessore Road, 112 Shyam Nagar Rd, beside Diamond Plaza, Bangur, Kolkata, West Bengal 700055",
   mapEmbed:
