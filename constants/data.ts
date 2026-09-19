@@ -468,6 +468,16 @@ export const FACULTY = [
     photo: "/assets/faculty/faculty-25.jpg",
     bio: "Distinguished Mathematics educator and ISI Kolkata PhD Scholar with top national ranks (GATE AIR 9, CSIR NET JRF 2x), specializing in advanced Mathematics mentoring.",
   },
+  {
+    id: 14,
+    name: "Ms. Chandrima Das",
+    qualification: "Graduate (Geography Honours)",
+    experience: "10+ Years",
+    subjects: ["Geography", "Social Studies"],
+    achievements: ["10+ Years Teaching Experience", "Former Asst. Teacher, St. Xavier's High School"],
+    photo: "/assets/faculty/faculty-26.jpg",
+    bio: "Former assistant teacher at St. Xavier's High School, Alampur, Howrah with over 10 years of dedicated teaching experience specializing in Geography Honours and Social Studies.",
+  },
 ];
 
 // ─── Testimonials ─────────────────────────────────────────────────────
