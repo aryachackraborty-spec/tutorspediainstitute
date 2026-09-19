@@ -83,13 +83,15 @@ export default function RootLayout({
               logo: `${SITE_URL}/assets/logo.png`,
               address: {
                 "@type": "PostalAddress",
+                streetAddress: "Room No. 110, 1st Floor, Diamond Arcade, 1/72 Jessore Road, 112 Shyam Nagar Rd, beside Diamond Plaza, Bangur",
                 addressLocality: "Kolkata",
                 addressRegion: "West Bengal",
+                postalCode: "700055",
                 addressCountry: "IN",
               },
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+91-98765-43210",
+                telephone: "+91-99037-90065",
                 contactType: "admissions",
               },
               sameAs: [

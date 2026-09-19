@@ -59,13 +59,13 @@ export default function Navbar() {
           <div className="section-container flex items-center justify-between py-1.5">
             <span className="flex items-center gap-4">
               <a
-                href={`mailto:info@tutorspedia.in`}
+                href={`mailto:${CONTACT.email}`}
                 className="hover:text-accent-300 transition-colors"
               >
-                info@tutorspedia.in
+                {CONTACT.email}
               </a>
               <span className="opacity-40">|</span>
-              <span>Mon–Sat: 8:00 AM – 8:00 PM</span>
+              <span>{CONTACT.officeHours}</span>
             </span>
             <span className="flex items-center gap-3">
               <a

@@ -7,15 +7,15 @@ export const SITE_URL = "https://tutorspedia.in";
 
 // ─── Contact Details ─────────────────────────────────────────────────
 export const CONTACT = {
-  phone: "+91 98765 43210",
-  phoneHref: "tel:+919876543210",
-  whatsapp: "+91 98765 43210",
-  whatsappHref: "https://wa.me/919876543210",
+  phone: "+91 99037 90065",
+  phoneHref: "tel:+919903790065",
+  whatsapp: "+91 99037 90065",
+  whatsappHref: "https://wa.me/919903790065",
   email: "info@tutorspedia.in",
-  address: "123, Education Lane, Kolkata, West Bengal - 700001",
+  address: "Room No. 110, 1st Floor, Diamond Arcade, 1/72 Jessore Road, 112 Shyam Nagar Rd, beside Diamond Plaza, Bangur, Kolkata, West Bengal 700055",
   mapEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.1!2d88.3!3d22.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDMwJzAwLjAiTiA4OMKwMTgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890",
-  officeHours: "Mon–Sat: 8:00 AM – 8:00 PM",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.475254921644!2d88.409893!3d22.617415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027668efebfa3b%3A0x4a4768ed1e5e01c7!2sDiamond%20Arcade!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  officeHours: "Mon–Sun: 8:00 AM – 8:00 PM",
   social: {
     facebook: "https://facebook.com/tutorspedia",
     instagram: "https://instagram.com/tutorspedia",
@@ -81,7 +81,7 @@ export const STATS = [
   { value: 5000, suffix: "+", label: "Students Trained", icon: "Users" },
   { value: 10, suffix: "+", label: "Years of Experience", icon: "Calendar" },
   { value: 30, suffix: "+", label: "Courses Offered", icon: "BookOpen" },
-  { value: 20, suffix: "+", label: "Expert Faculty", icon: "GraduationCap" },
+  { value: 30, suffix: "+", label: "Expert Faculty", icon: "GraduationCap" },
   { value: 100, suffix: "%", label: "Parent Satisfaction", icon: "Heart" },
   { value: 500, suffix: "+", label: "Competition Winners", icon: "Trophy" },
 ];
