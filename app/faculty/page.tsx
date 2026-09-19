@@ -49,7 +49,7 @@ export default function FacultyPage() {
                       src={member.photo}
                       alt={member.name}
                       fill
-                      className="object-cover"
+                      className="object-cover object-top"
                     />
                   </div>
                   <span className="absolute top-5 right-5 bg-primary-700 text-white text-xs font-bold px-3 py-1 rounded-xl shadow-md flex items-center gap-1">
@@ -135,7 +135,7 @@ export default function FacultyPage() {
                       src={selectedMember.photo}
                       alt={selectedMember.name}
                       fill
-                      className="object-cover"
+                      className="object-cover object-top"
                     />
                   </div>
                   <h4 className="font-heading font-bold text-white text-lg leading-tight">
