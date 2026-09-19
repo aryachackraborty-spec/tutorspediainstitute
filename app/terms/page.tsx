@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/shared/PageHeader";
+import { CONTACT } from "@/constants/data";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions",
@@ -41,7 +42,7 @@ export default function TermsPage() {
 
             <h2 className="text-xl font-heading font-bold text-gray-900 dark:text-white mt-8">5. Contact Information</h2>
             <p>
-              For clarify on our terms of service, billing policies, or class regulations, contact our administrative desk or email us at info@tutorspedia.in.
+              For clarify on our terms of service, billing policies, or class regulations, contact our administrative desk or email us at {CONTACT.email}.
             </p>
           </div>
         </div>

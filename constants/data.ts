@@ -11,7 +11,7 @@ export const CONTACT = {
   phoneHref: "tel:+919903790065",
   whatsapp: "+91 99037 90065",
   whatsappHref: "https://wa.me/919903790065",
-  email: "info@tutorspedia.in",
+  email: "eboardacademy2020@gmail.com",
   address: "Room No. 110, 1st Floor, Diamond Arcade, 1/72 Jessore Road, 112 Shyam Nagar Rd, beside Diamond Plaza, Bangur, Kolkata, West Bengal 700055",
   mapEmbed:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.475254921644!2d88.409893!3d22.617415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027668efebfa3b%3A0x4a4768ed1e5e01c7!2sDiamond%20Arcade!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
