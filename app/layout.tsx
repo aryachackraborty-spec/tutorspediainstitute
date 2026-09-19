@@ -92,6 +92,7 @@ export default function RootLayout({
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+91-99037-90065",
+                email: CONTACT.email,
                 contactType: "admissions",
               },
               sameAs: [
