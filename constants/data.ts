@@ -478,6 +478,26 @@ export const FACULTY = [
     photo: "/assets/faculty/faculty-26.jpg",
     bio: "Former assistant teacher at St. Xavier's High School, Alampur, Howrah with over 10 years of dedicated teaching experience specializing in Geography Honours and Social Studies.",
   },
+  {
+    id: 15,
+    name: "Mr. Tanay Bhattacharya",
+    qualification: "B.Tech in CSE, Diploma in CS & Technology",
+    experience: "15 Years",
+    subjects: ["Computer Science", "Artificial Intelligence", "IT & ICT"],
+    achievements: ["15 Years Teaching Experience", "B.Tech CSE & Diploma Specialist", "AI & ICT Curriculum Mentor"],
+    photo: "/assets/faculty/faculty-27.jpg",
+    bio: "Experienced Computer Science & Technology educator with 15 years of experience mentoring students in Computer Science, Artificial Intelligence, IT, and ICT.",
+  },
+  {
+    id: 16,
+    name: "Mr. Sunil Jha",
+    qualification: "M.Sc. in Mathematics",
+    experience: "15 Years",
+    subjects: ["Mathematics", "Classes 7 to 10"],
+    achievements: ["15 Years Teaching Experience", "M.Sc. Mathematics Specialist", "Class 7–10 Math Specialist"],
+    photo: "/assets/faculty/faculty-28.jpg",
+    bio: "Dedicated Mathematics educator with 15 years of rich experience specializing in concept building and problem solving for Classes 7 to 10.",
+  },
 ];
 
 // ─── Testimonials ─────────────────────────────────────────────────────
