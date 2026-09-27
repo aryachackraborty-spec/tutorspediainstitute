@@ -24,6 +24,42 @@ export const CONTACT = {
   },
 };
 
+// ─── Branch Offices ───────────────────────────────────────────────────
+export const BRANCHES = [
+  {
+    id: "dumdum",
+    name: "Dum Dum Park Branch (Head Office)",
+    tagline: "Best Coaching Centre in Dum Dum Park | CBSE | ICSE | WBSE",
+    rating: 4.8,
+    reviewsCount: 48,
+    badge: "Head Office",
+    address:
+      "ROOM NO. 110, Diamond Arcade, 1st Floor, 1/72 Jessore Road, 112 Shyam Nagar Rd, beside DIAMOND PLAZA, Bangur, Kolkata, West Bengal 700055",
+    landmark: "Beside Diamond Plaza, Bangur",
+    phone: "+91 81000 38397",
+    phoneHref: "tel:+918100038397",
+    hours: "Mon–Sun: 8:00 AM – 8:00 PM",
+    mapEmbed:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.475254921644!2d88.409893!3d22.617415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027668efebfa3b%3A0x4a4768ed1e5e01c7!2sDiamond%20Arcade!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    directionsUrl: "https://maps.google.com/?q=Tutorspedia+Institute+Diamond+Arcade+Dum+Dum+Park",
+  },
+  {
+    id: "panache",
+    name: "Panache Green City Branch",
+    tagline: "Satgachi Branch | CBSE | ICSE | WBSE",
+    badge: "Satgachi Branch",
+    address:
+      "1st floor, Room no.1, Panache Green City, 28, Shyam Nagar Rd, near GD Goenka school, Ward Number 23, Satgachi, Kolkata, West Bengal 700055",
+    landmark: "Near GD Goenka School, Satgachi",
+    phone: "+91 81000 38397",
+    phoneHref: "tel:+918100038397",
+    hours: "Mon–Sun: 11:00 AM – 8:00 PM",
+    mapEmbed:
+      "https://maps.google.com/maps?q=Panache+Green+City+28+Shyam+Nagar+Rd+Satgachi+Kolkata+700055&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    directionsUrl: "https://maps.google.com/?q=Panache+Green+City+28+Shyam+Nagar+Rd+Satgachi+Kolkata+700055",
+  },
+];
+
 // ─── Navigation ──────────────────────────────────────────────────────
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -497,6 +533,45 @@ export const FACULTY = [
     achievements: ["15 Years Teaching Experience", "M.Sc. Mathematics Specialist", "Class 7–10 Math Specialist"],
     photo: "/assets/faculty/faculty-28.jpg",
     bio: "Dedicated Mathematics educator with 15 years of rich experience specializing in concept building and problem solving for Classes 7 to 10.",
+  },
+  {
+    id: 17,
+    name: "Ms. Chirosree Chakraborty",
+    qualification: "B.A. English Honours",
+    experience: "7+ Years",
+    subjects: ["Social Science", "English"],
+    achievements: [
+      "7+ Years Tutoring Experience",
+      "Former Teacher, Sarswati Vidyapeeth Institution, Newtown",
+    ],
+    photo: "/assets/faculty/faculty-29.jpg",
+    bio: "Passionate educator with over 7 years of tutoring experience and institutional teaching experience at Sarswati Vidyapeeth Institution, Newtown, specializing in English and Social Science.",
+  },
+  {
+    id: 18,
+    name: "Ms. Sujata Saha Debnath",
+    qualification: "M.A. in Hindi, B.Ed",
+    experience: "Experienced Educator",
+    subjects: ["Hindi", "WB Board Specialist"],
+    achievements: [
+      "M.A. in Hindi & B.Ed Specialist",
+      "Teacher, Sree Aurobindo Siksha Sadan (WB Board)",
+    ],
+    photo: "/assets/faculty/faculty-30.jpg",
+    bio: "Accomplished Hindi educator with an M.A. in Hindi and B.Ed, currently teaching at Sree Aurobindo Siksha Sadan (WB Board), dedicated to fostering language proficiency and literature mastery.",
+  },
+  {
+    id: 19,
+    name: "Ms. Harvinder Kaur",
+    qualification: "B.Com Graduate",
+    experience: "20+ Years",
+    subjects: ["Tutors Coordinator", "Junior Section Specialist"],
+    achievements: [
+      "20+ Years Mentoring & Teaching Experience (Juniors)",
+      "6+ Years Academic Coordinator Experience",
+    ],
+    photo: "/assets/faculty/faculty-31.jpg",
+    bio: "Dedicated Tutors Coordinator & Teacher with 20+ years of junior teaching excellence and 6+ years of academic coordination experience, managing, guiding, and helping young learners build confidence.",
   },
 ];
 

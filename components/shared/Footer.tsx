@@ -11,7 +11,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import Image from "next/image";
-import { CONTACT, NAV_LINKS, SITE_NAME, SITE_TAGLINE } from "@/constants/data";
+import { CONTACT, BRANCHES, NAV_LINKS, SITE_NAME, SITE_TAGLINE } from "@/constants/data";
 
 const footerLinks = {
   quickLinks: [
@@ -191,41 +191,29 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact & Branches */}
           <div>
             <h4 className="font-heading font-semibold text-white mb-5 text-sm uppercase tracking-widest">
-              Contact Us
+              Our Branches
             </h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-primary-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-400 text-sm leading-relaxed">
-                  {CONTACT.address}
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={16} className="text-primary-400 flex-shrink-0" />
-                <a
-                  href={CONTACT.phoneHref}
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
-                >
+            <div className="space-y-4 text-xs text-gray-400">
+              {BRANCHES.map((b) => (
+                <div key={b.id} className="border-b border-gray-800 pb-3 last:border-0 last:pb-0">
+                  <div className="font-bold text-white text-xs mb-1 flex items-center gap-1.5">
+                    <MapPin size={13} className="text-primary-400 shrink-0" />
+                    <span>{b.name}</span>
+                  </div>
+                  <p className="text-gray-400 leading-relaxed mb-1">{b.address}</p>
+                  <p className="text-amber-400 text-[11px] font-medium">Hours: {b.hours}</p>
+                </div>
+              ))}
+              <div className="pt-2 flex items-center gap-2">
+                <Phone size={14} className="text-primary-400" />
+                <a href={CONTACT.phoneHref} className="text-white hover:underline text-xs font-semibold">
                   {CONTACT.phone}
                 </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={16} className="text-primary-400 flex-shrink-0" />
-                <a
-                  href={`mailto:${CONTACT.email}`}
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
-                >
-                  {CONTACT.email}
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Clock size={16} className="text-primary-400 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">{CONTACT.officeHours}</span>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
