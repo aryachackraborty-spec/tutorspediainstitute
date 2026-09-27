@@ -7,10 +7,12 @@ export const SITE_URL = "https://tutorspedia.in";
 
 // ─── Contact Details ─────────────────────────────────────────────────
 export const CONTACT = {
-  phone: "+91 81000 38397",
-  phoneHref: "tel:+918100038397",
-  whatsapp: "+91 81000 38397",
-  whatsappHref: "https://wa.me/918100038397",
+  phone: "+91 99037 90065",
+  phoneHref: "tel:+919903790065",
+  secondaryPhone: "+91 81000 38397",
+  secondaryPhoneHref: "tel:+918100038397",
+  whatsapp: "+91 99037 90065",
+  whatsappHref: "https://wa.me/919903790065",
   email: "eboardacademy2020@gmail.com",
   address: "Room No. 110, 1st Floor, Diamond Arcade, 1/72 Jessore Road, 112 Shyam Nagar Rd, beside Diamond Plaza, Bangur, Kolkata, West Bengal 700055",
   mapEmbed:
@@ -36,8 +38,10 @@ export const BRANCHES = [
     address:
       "ROOM NO. 110, Diamond Arcade, 1st Floor, 1/72 Jessore Road, 112 Shyam Nagar Rd, beside DIAMOND PLAZA, Bangur, Kolkata, West Bengal 700055",
     landmark: "Beside Diamond Plaza, Bangur",
-    phone: "+91 81000 38397",
-    phoneHref: "tel:+918100038397",
+    phone: "+91 99037 90065",
+    phoneHref: "tel:+919903790065",
+    secondaryPhone: "+91 81000 38397",
+    secondaryPhoneHref: "tel:+918100038397",
     hours: "Mon–Sun: 8:00 AM – 8:00 PM",
     mapEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.475254921644!2d88.409893!3d22.617415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027668efebfa3b%3A0x4a4768ed1e5e01c7!2sDiamond%20Arcade!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
@@ -51,8 +55,10 @@ export const BRANCHES = [
     address:
       "1st floor, Room no.1, Panache Green City, 28, Shyam Nagar Rd, near GD Goenka school, Ward Number 23, Satgachi, Kolkata, West Bengal 700055",
     landmark: "Near GD Goenka School, Satgachi",
-    phone: "+91 81000 38397",
-    phoneHref: "tel:+918100038397",
+    phone: "+91 99037 90065",
+    phoneHref: "tel:+919903790065",
+    secondaryPhone: "+91 81000 38397",
+    secondaryPhoneHref: "tel:+918100038397",
     hours: "Mon–Sun: 11:00 AM – 8:00 PM",
     mapEmbed:
       "https://maps.google.com/maps?q=Panache+Green+City+28+Shyam+Nagar+Rd+Satgachi+Kolkata+700055&t=&z=15&ie=UTF8&iwloc=&output=embed",

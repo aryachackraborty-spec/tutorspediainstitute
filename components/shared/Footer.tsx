@@ -207,11 +207,18 @@ export default function Footer() {
                   <p className="text-amber-400 text-[11px] font-medium">Hours: {b.hours}</p>
                 </div>
               ))}
-              <div className="pt-2 flex items-center gap-2">
-                <Phone size={14} className="text-primary-400" />
-                <a href={CONTACT.phoneHref} className="text-white hover:underline text-xs font-semibold">
-                  {CONTACT.phone}
-                </a>
+              <div className="pt-2 flex flex-col gap-1 text-xs">
+                <div className="flex items-center gap-2">
+                  <Phone size={14} className="text-primary-400 shrink-0" />
+                  <a href={CONTACT.phoneHref} className="text-white font-bold hover:underline">
+                    {CONTACT.phone} <span className="text-[10px] text-emerald-400">(Main)</span>
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 pl-5">
+                  <a href={CONTACT.secondaryPhoneHref} className="text-gray-400 hover:text-white text-[11px]">
+                    {CONTACT.secondaryPhone} (Secondary)
+                  </a>
+                </div>
               </div>
             </div>
           </div>

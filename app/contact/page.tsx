@@ -132,13 +132,18 @@ export default function ContactPage() {
                           </div>
                         </li>
 
-                        <li className="flex items-center gap-3">
-                          <Phone size={18} className="text-emerald-500 shrink-0" />
+                        <li className="flex items-start gap-3">
+                          <Phone size={18} className="text-emerald-500 shrink-0 mt-0.5" />
                           <div>
-                            <span className="font-semibold text-gray-900 dark:text-white mr-2">Phone:</span>
-                            <a href={branch.phoneHref} className="hover:text-primary-600 font-medium">
-                              {branch.phone}
-                            </a>
+                            <span className="font-semibold text-gray-900 dark:text-white block mb-0.5">Contact Numbers:</span>
+                            <div className="flex flex-col gap-0.5">
+                              <a href={branch.phoneHref} className="hover:text-primary-600 font-bold text-gray-900 dark:text-white">
+                                {branch.phone} <span className="text-[10px] uppercase bg-primary-100 dark:bg-primary-900/60 text-primary-700 dark:text-primary-300 font-bold px-1.5 py-0.5 rounded ml-1">Main</span>
+                              </a>
+                              <a href={branch.secondaryPhoneHref} className="hover:text-primary-600 font-medium text-xs text-gray-600 dark:text-gray-400">
+                                {branch.secondaryPhone} <span className="text-[10px] text-gray-400 dark:text-gray-500">(Secondary)</span>
+                              </a>
+                            </div>
                           </div>
                         </li>
 
@@ -238,9 +243,14 @@ export default function ContactPage() {
                   <h4 className="font-heading font-bold text-xs text-gray-900 dark:text-white mb-1">
                     Central Phone Helpline
                   </h4>
-                  <a href={CONTACT.phoneHref} className="text-xs font-semibold text-gray-600 dark:text-gray-300 hover:text-primary-600">
-                    {CONTACT.phone}
-                  </a>
+                  <div className="flex flex-col gap-0.5 text-xs font-semibold">
+                    <a href={CONTACT.phoneHref} className="text-gray-900 dark:text-white font-bold hover:text-primary-600">
+                      {CONTACT.phone} <span className="text-[10px] text-emerald-600 font-bold">(Main)</span>
+                    </a>
+                    <a href={CONTACT.secondaryPhoneHref} className="text-gray-500 dark:text-gray-400 font-normal hover:text-primary-600">
+                      {CONTACT.secondaryPhone} (Secondary)
+                    </a>
+                  </div>
                 </div>
 
                 <div className="bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 rounded-2xl p-4">
