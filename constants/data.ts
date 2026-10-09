@@ -579,6 +579,26 @@ export const FACULTY = [
     photo: "/assets/faculty/faculty-31.jpg",
     bio: "Dedicated Tutors Coordinator & Teacher with 20+ years of junior teaching excellence and 6+ years of academic coordination experience, managing, guiding, and helping young learners build confidence.",
   },
+  {
+    id: 20,
+    name: "Ms. Rachna Khemka",
+    qualification: "B.Com (Hons.), Semi M.Com",
+    experience: "5 Years",
+    subjects: [
+      "Coordinator",
+      "Junior Section (Nursery to Class 5)",
+      "Mental Maths",
+      "Abacus",
+      "Phonics",
+    ],
+    achievements: [
+      "Certified Phonics, Mental Maths & Abacus Trainer",
+      "Coordinator & Junior Section Specialist (Nursery to Class 5)",
+      "5 Years Dedicated Teaching & Training Experience",
+    ],
+    photo: "/assets/faculty/faculty-32.png",
+    bio: "Coordinator, Junior Section Educator, and Certified Phonics, Mental Maths & Abacus Trainer at Tutorspedia Institute with 5 years of experience guiding foundational learners from Nursery to Class 5 across all subjects.",
+  },
 ];
 
 // ─── Testimonials ─────────────────────────────────────────────────────
