@@ -23,15 +23,34 @@ type FormData = z.infer<typeof schema>;
 export default function AdmissionCTA() {
   const [modalOpen, setModalOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [whatsappLink, setWhatsappLink] = useState("");
 
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
 
   const onSubmit = async (data: FormData) => {
-    await new Promise((r) => setTimeout(r, 1500));
+    const lines = [
+      `*Free Demo Booking Request - Tutorspedia Institute*`,
+      ``,
+      `• *Student Name:* ${data.studentName}`,
+      `• *Parent Name:* ${data.parentName}`,
+      `• *Contact Phone:* ${data.phone}`,
+      `• *Email:* ${data.email || "Not provided"}`,
+      `• *Class / Grade:* ${data.class}`,
+      `• *Course Interest:* ${data.course}`,
+    ];
+
+    const message = lines.join("\n");
+    const whatsappUrl = `https://wa.me/919903790065?text=${encodeURIComponent(message)}`;
+
+    setWhatsappLink(whatsappUrl);
     setSubmitted(true);
-    setTimeout(() => { setModalOpen(false); setSubmitted(false); reset(); }, 3000);
+    reset();
+
+    if (typeof window !== "undefined") {
+      window.open(whatsappUrl, "_blank");
+    }
   };
 
   return (
@@ -151,10 +170,34 @@ export default function AdmissionCTA() {
               className="relative z-10 w-full sm:max-w-lg bg-white dark:bg-gray-900 rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] overflow-y-auto"
             >
               {submitted ? (
-                <div className="p-10 text-center">
+                <div className="p-8 sm:p-10 text-center">
                   <CheckCircle size={56} className="text-secondary mx-auto mb-4" />
-                  <h3 className="font-heading text-2xl font-bold text-gray-900 dark:text-white mb-2">Demo Booked! 🎉</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">We&apos;ll contact you within 24 hours to confirm your free demo class.</p>
+                  <h3 className="font-heading text-2xl font-bold text-gray-900 dark:text-white mb-2">Demo Request Prepared!</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-6">
+                    Thank you! Your demo request has been forwarded to our official WhatsApp (+91 99037 90065).
+                  </p>
+                  {whatsappLink && (
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                      <a
+                        href={whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary inline-flex items-center gap-2 !py-2.5 !px-5 text-sm shadow-glow"
+                      >
+                        Open WhatsApp →
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setModalOpen(false);
+                          setSubmitted(false);
+                        }}
+                        className="btn-secondary !py-2.5 !px-5 text-sm"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <>
@@ -213,7 +256,7 @@ export default function AdmissionCTA() {
                         <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">Course Interest *</label>
                         <select {...register("course")} className="input-premium">
                           <option value="">Select course</option>
-                          {["Academic Coaching", "Brain Stimulation", "Abacus", "Robotics", "Coding", "Public Speaking", "AI for Kids", "Language Course"].map(c => (
+                          {["Academic Coaching", "Brain Stimulation", "Abacus", "Robotics", "Coding", "Public Speaking", "AI for Kids", "Language Course", "Other"].map(c => (
                             <option key={c} value={c}>{c}</option>
                           ))}
                         </select>

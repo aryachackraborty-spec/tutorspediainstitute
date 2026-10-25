@@ -34,6 +34,7 @@ type FormData = z.infer<typeof schema>;
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [whatsappLink, setWhatsappLink] = useState("");
   const [activeBranchId, setActiveBranchId] = useState<string>("dumdum");
 
   const activeBranch =
@@ -47,15 +48,32 @@ export default function ContactPage() {
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
-      branch: "Dum Dum Park Branch (Head Office)",
+      branch: "Shyamnagar Road Branch (Head Office)",
     },
   });
 
-  const onSubmit = async (_data: FormData) => {
-    await new Promise((r) => setTimeout(r, 1500));
+  const onSubmit = async (data: FormData) => {
+    const lines = [
+      `*New Inquiry - Tutorspedia Institute*`,
+      ``,
+      `• *Target Branch:* ${data.branch}`,
+      `• *Full Name:* ${data.name}`,
+      `• *Phone Number:* ${data.phone}`,
+      `• *Email:* ${data.email}`,
+      `• *Subject:* ${data.subject}`,
+      `• *Message:* ${data.message}`,
+    ];
+
+    const message = lines.join("\n");
+    const whatsappUrl = `https://wa.me/919903790065?text=${encodeURIComponent(message)}`;
+
+    setWhatsappLink(whatsappUrl);
     setSubmitted(true);
     reset();
-    setTimeout(() => setSubmitted(false), 5000);
+
+    if (typeof window !== "undefined") {
+      window.open(whatsappUrl, "_blank");
+    }
   };
 
   return (
@@ -215,7 +233,7 @@ export default function ContactPage() {
                         : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                     }`}
                   >
-                    {b.badge}
+                    {b.id === "panache" ? "Panache Green City Branch" : b.badge}
                   </button>
                 ))}
               </div>
@@ -285,11 +303,30 @@ export default function ContactPage() {
                 <div className="text-center py-12">
                   <CheckCircle size={56} className="text-secondary mx-auto mb-4" />
                   <h4 className="font-heading text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    Message Sent Successfully!
+                    Inquiry Prepared!
                   </h4>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm max-w-xs mx-auto">
-                    Thank you for reaching out to Tutorspedia Institute. We will get back to you shortly.
+                  <p className="text-gray-600 dark:text-gray-400 text-sm max-w-sm mx-auto mb-6">
+                    Thank you for reaching out to Tutorspedia Institute. Your inquiry has been forwarded to our official WhatsApp (+91 99037 90065).
                   </p>
+                  {whatsappLink && (
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                      <a
+                        href={whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary inline-flex items-center gap-2 !py-3 !px-6 text-sm shadow-glow"
+                      >
+                        Open WhatsApp to Send Inquiry →
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => setSubmitted(false)}
+                        className="btn-secondary !py-3 !px-5 text-sm"
+                      >
+                        Send Another Inquiry
+                      </button>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

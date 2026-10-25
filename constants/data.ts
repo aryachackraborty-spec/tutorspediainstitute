@@ -30,7 +30,7 @@ export const CONTACT = {
 export const BRANCHES = [
   {
     id: "dumdum",
-    name: "Dum Dum Park Branch (Head Office)",
+    name: "Shyamnagar Road Branch (Head Office)",
     tagline: "Best Coaching Centre in Dum Dum Park | CBSE | ICSE | WBSE",
     rating: 4.8,
     reviewsCount: 48,

@@ -33,15 +33,36 @@ const requiredDocs = [
 
 export default function AdmissionsPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [whatsappLink, setWhatsappLink] = useState("");
 
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
 
   const onSubmit = async (data: FormData) => {
-    await new Promise((r) => setTimeout(r, 1800));
+    const lines = [
+      `*New Admission Application - Tutorspedia Institute*`,
+      ``,
+      `• *Student Name:* ${data.studentName}`,
+      `• *Parent/Guardian Name:* ${data.parentName}`,
+      `• *Contact Phone:* ${data.phone}`,
+      `• *Email:* ${data.email}`,
+      `• *Class / Standard:* ${data.class}`,
+      `• *School Board:* ${data.board}`,
+      `• *Desired Course:* ${data.course}`,
+      data.message ? `• *Additional Info:* ${data.message}` : null,
+    ].filter(Boolean);
+
+    const message = lines.join("\n");
+    const whatsappUrl = `https://wa.me/919903790065?text=${encodeURIComponent(message)}`;
+
+    setWhatsappLink(whatsappUrl);
     setSubmitted(true);
     reset();
+
+    if (typeof window !== "undefined") {
+      window.open(whatsappUrl, "_blank");
+    }
   };
 
   return (
@@ -170,9 +191,28 @@ export default function AdmissionsPage() {
                   <CheckCircle size={36} />
                 </div>
                 <h3 className="font-heading text-3xl font-bold text-gray-900 dark:text-white mb-3">Application Submitted!</h3>
-                <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto">
-                  Thank you for applying to Tutorspedia Institute. Our admissions office will get in touch with you over phone or email within the next 24 hours.
+                <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-6">
+                  Thank you for applying to Tutorspedia Institute. Your application details have been forwarded to our official WhatsApp (+91 99037 90065).
                 </p>
+                {whatsappLink && (
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a
+                      href={whatsappLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center gap-2 !py-3.5 !px-8 shadow-glow text-base"
+                    >
+                      Open WhatsApp to Complete Submission →
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => setSubmitted(false)}
+                      className="btn-secondary !py-3.5 !px-6 text-sm"
+                    >
+                      Submit Another Application
+                    </button>
+                  </div>
+                )}
               </div>
             ) : (
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -245,7 +285,7 @@ export default function AdmissionsPage() {
                     <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider mb-2">Desired Course *</label>
                     <select {...register("course")} className="input-premium">
                       <option value="">Select program</option>
-                      {["Academic Coaching", "Brain Stimulation", "Abacus & Mental Maths", "Robotics & STEM", "Coding & Tech Skills", "Public Speaking", "Language Courses"].map(c => (
+                      {["Academic Coaching", "Brain Stimulation", "Abacus & Mental Maths", "Robotics & STEM", "Coding & Tech Skills", "Public Speaking", "Language Courses", "Other"].map(c => (
                         <option key={c} value={c}>{c}</option>
                       ))}
                     </select>
