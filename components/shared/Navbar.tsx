@@ -81,9 +81,9 @@ export default function Navbar() {
 
         {/* Main Nav */}
         <nav className="section-container flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <div className="relative h-12 w-[160px] group-hover:opacity-90 transition-opacity duration-200">
+          {/* Logo & Company Name */}
+          <Link href="/" className="flex items-center gap-2 xs:gap-2.5 sm:gap-3 group shrink-0 min-w-0">
+            <div className="relative h-8 w-[76px] xs:h-9 xs:w-[90px] sm:h-11 sm:w-[115px] lg:h-12 lg:w-[130px] shrink-0 group-hover:opacity-90 transition-opacity duration-200">
               <Image
                 src={
                   transparent || (mounted && currentTheme === "dark")
@@ -92,14 +92,22 @@ export default function Navbar() {
                 }
                 alt="Tutorspedia Institute"
                 fill
-                className="object-contain"
+                className="object-contain object-left"
                 priority
               />
+            </div>
+            <div className="flex flex-col justify-center leading-none select-none">
+              <span className="font-heading font-black tracking-tight text-[11px] xs:text-xs sm:text-sm lg:text-base text-gray-900 dark:text-white uppercase transition-colors group-hover:text-primary-700 dark:group-hover:text-primary-400 whitespace-nowrap">
+                TUTORSPEDIA
+              </span>
+              <span className="font-heading font-bold tracking-widest text-[7.5px] xs:text-[8.5px] sm:text-[9.5px] lg:text-[11px] text-primary-700 dark:text-primary-400 uppercase mt-0.5 whitespace-nowrap">
+                INSTITUTE
+              </span>
             </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="hidden xl:flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-3.5 2xl:gap-6">
             {NAV_LINKS.map((link) =>
               link.children ? (
                 <div
@@ -185,7 +193,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden xl:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-2 2xl:gap-3 shrink-0">
             {/* Dark mode toggle */}
             {mounted && (
               <button
@@ -207,19 +215,19 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200",
+                "flex items-center gap-1.5 2xl:gap-2 px-3 2xl:px-4 py-2 rounded-xl text-xs 2xl:text-sm font-semibold transition-all duration-200",
                 transparent
                   ? "bg-white/15 text-white border border-white/30 hover:bg-white/25"
                   : "bg-green-50 text-green-700 border border-green-200 hover:bg-green-100 dark:bg-green-900/20 dark:text-green-400 dark:border-green-800"
               )}
             >
-              <MessageCircle size={16} />
+              <MessageCircle size={15} />
               WhatsApp
             </a>
 
             <Link
               href="/admissions"
-              className="btn-primary text-sm !px-5 !py-2.5"
+              className="btn-primary text-xs 2xl:text-sm !px-3.5 2xl:!px-5 !py-2 2xl:!py-2.5 whitespace-nowrap"
             >
               Book Free Demo
             </Link>
@@ -273,8 +281,8 @@ export default function Navbar() {
             >
               {/* Drawer header */}
               <div className="flex items-center justify-between p-5 border-b border-gray-100 dark:border-gray-800">
-                <div className="flex items-center">
-                  <div className="relative h-10 w-[140px]">
+                <div className="flex items-center gap-2.5">
+                  <div className="relative h-9 w-[80px]">
                     <Image
                       src={
                         mounted && currentTheme === "dark"
@@ -283,8 +291,16 @@ export default function Navbar() {
                       }
                       alt="Tutorspedia Institute"
                       fill
-                      className="object-contain"
+                      className="object-contain object-left"
                     />
+                  </div>
+                  <div className="flex flex-col justify-center leading-none">
+                    <span className="font-heading font-black tracking-tight text-xs text-gray-900 dark:text-white uppercase">
+                      TUTORSPEDIA
+                    </span>
+                    <span className="font-heading font-bold tracking-widest text-[8px] text-primary-700 dark:text-primary-400 uppercase mt-0.5">
+                      INSTITUTE
+                    </span>
                   </div>
                 </div>
                 <button
