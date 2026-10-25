@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: `${SITE_NAME} | ${SITE_TAGLINE}`,
   description: SITE_DESCRIPTION,
   alternates: { canonical: "/" },
+  verification: {
+    google: "K-2embh5LRSWXteIGleNR8r4NkKtI0LHhG5zb7KrPZo",
+  },
 };
 
 export default function HomePage() {
