@@ -8,6 +8,7 @@ import { STATS } from "@/constants/data";
 import CountUp from "react-countup";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import CertificatesShowcase from "@/components/achievements/CertificatesShowcase";
 
 const results = [
   { student: "Ananya Sen", board: "ICSE (Class 10)", score: "98.8%", school: "Don Bosco School", rank: "School Topper" },
@@ -32,7 +33,7 @@ export default function AchievementsPage() {
     <>
       <PageHeader
         title="Our Achievements"
-        subtitle="A celebration of board toppers, science Olympiad medalists, prestigious awards, and milestones."
+        subtitle="A celebration of board toppers, national affiliations, science Olympiad partnerships, and prestigious accreditations."
         backgroundImage="/assets/infrastructure/infra-15.jpg"
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Achievements" }]}
       />
@@ -67,8 +68,11 @@ export default function AchievementsPage() {
         </div>
       </section>
 
+      {/* Official Certificates & Affiliations Showcase */}
+      <CertificatesShowcase />
+
       {/* Board Results Table / Grid */}
-      <section className="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 sm:py-24 bg-white dark:bg-gray-950">
         <div className="section-container">
           <SectionHeading
             badge="Board Examination Results"
@@ -85,7 +89,7 @@ export default function AchievementsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-card border border-gray-100 dark:border-gray-700 flex flex-col justify-between"
+                className="bg-gray-50 dark:bg-gray-800/80 rounded-2xl p-6 shadow-card border border-gray-100 dark:border-gray-700 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -108,7 +112,7 @@ export default function AchievementsPage() {
       </section>
 
       {/* Awards & Recognition */}
-      <section className="py-16 sm:py-24 bg-white dark:bg-gray-950">
+      <section className="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900">
         <div className="section-container">
           <SectionHeading
             badge="Industry Awards"
