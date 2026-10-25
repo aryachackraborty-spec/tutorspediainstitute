@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { X, CheckCircle, ArrowRight, Calendar, Loader2 } from "lucide-react";
+import { X, CheckCircle, ArrowRight, Calendar, Loader2, Phone } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
-import { ADMISSION_STEPS } from "@/constants/data";
+import { ADMISSION_STEPS, CONTACT } from "@/constants/data";
 
 const schema = z.object({
   studentName: z.string().min(2, "Required"),
@@ -88,11 +88,18 @@ export default function AdmissionCTA() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <button
                 onClick={() => setModalOpen(true)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-10 py-3.5 sm:py-4 bg-white text-primary-700 font-bold rounded-xl sm:rounded-2xl hover:bg-primary-50 active:scale-95 transition-all shadow-premium text-sm sm:text-lg"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-primary-700 font-bold rounded-xl sm:rounded-2xl hover:bg-primary-50 active:scale-95 transition-all shadow-premium text-sm sm:text-base"
               >
                 <Calendar size={18} />
                 Book Free Demo
               </button>
+              <a
+                href={CONTACT.phoneHref}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl sm:rounded-2xl active:scale-95 transition-all shadow-md text-sm sm:text-base"
+              >
+                <Phone size={18} />
+                Call 9903790065
+              </a>
               <a
                 href="/admissions"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-white text-white font-bold rounded-xl sm:rounded-2xl hover:bg-white/10 active:scale-95 transition-all text-sm sm:text-base"
@@ -101,6 +108,26 @@ export default function AdmissionCTA() {
                 <ArrowRight size={16} />
               </a>
             </div>
+
+            <p className="mt-6 text-white/80 text-xs sm:text-sm flex items-center justify-center gap-2 flex-wrap">
+              <span>Direct Admissions Helpline:</span>
+              <a
+                href={CONTACT.phoneHref}
+                className="text-secondary-400 hover:text-secondary-300 font-bold underline underline-offset-4 inline-flex items-center gap-1"
+              >
+                <Phone size={13} className="inline shrink-0" />
+                9903790065
+              </a>
+              <span className="text-white/40">|</span>
+              <a
+                href={CONTACT.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-400 hover:text-green-300 font-bold underline underline-offset-4 inline-flex items-center gap-1"
+              >
+                WhatsApp Us
+              </a>
+            </p>
           </div>
         </motion.div>
       </section>
@@ -204,6 +231,12 @@ export default function AdmissionCTA() {
                         <><Calendar size={16} />Book My Free Demo</>
                       )}
                     </button>
+                    <p className="text-center text-xs text-gray-500 dark:text-gray-400 pt-1">
+                      Prefer to talk directly? Call us at{" "}
+                      <a href={CONTACT.phoneHref} className="text-primary-600 dark:text-primary-400 font-bold hover:underline">
+                        9903790065
+                      </a>
+                    </p>
                   </form>
                 </>
               )}

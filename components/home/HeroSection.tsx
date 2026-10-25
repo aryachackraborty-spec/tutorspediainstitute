@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ArrowRight, MessageCircle } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, MessageCircle, Phone } from "lucide-react";
 import { CONTACT } from "@/constants/data";
 
 const slides = [
@@ -174,9 +174,16 @@ export default function HeroSection() {
                 Book Free Demo
                 <ArrowRight size={16} />
               </Link>
+              <a
+                href={CONTACT.phoneHref}
+                className="inline-flex items-center gap-2 px-5 py-3 sm:px-6 sm:py-4 bg-white/15 hover:bg-white/25 text-white font-bold rounded-2xl border border-white/30 backdrop-blur-sm transition-all duration-300 text-sm sm:text-base active:scale-95"
+              >
+                <Phone size={16} />
+                Call 9903790065
+              </a>
               <Link
                 href="/courses"
-                className="inline-flex items-center gap-2 px-5 py-3 sm:px-8 sm:py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-2xl border border-white/30 backdrop-blur-sm transition-all duration-300 text-sm sm:text-base active:scale-95"
+                className="inline-flex items-center gap-2 px-5 py-3 sm:px-6 sm:py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-2xl border border-white/20 backdrop-blur-sm transition-all duration-300 text-sm sm:text-base active:scale-95"
               >
                 Explore Courses
               </Link>

@@ -203,7 +203,17 @@ export default function Footer() {
                     <MapPin size={13} className="text-primary-400 shrink-0" />
                     <span>{b.name}</span>
                   </div>
-                  <p className="text-gray-400 leading-relaxed mb-1">{b.address}</p>
+                  <p className="text-gray-400 leading-relaxed mb-1.5">{b.address}</p>
+                  <div className="flex items-center gap-2 mb-1 text-[11px]">
+                    <Phone size={12} className="text-emerald-400 shrink-0" />
+                    <a href={b.phoneHref} className="text-white hover:underline font-semibold">
+                      {b.phone}
+                    </a>
+                    <span className="text-gray-600">/</span>
+                    <a href={b.secondaryPhoneHref} className="text-gray-300 hover:text-white">
+                      {b.secondaryPhone}
+                    </a>
+                  </div>
                   <p className="text-amber-400 text-[11px] font-medium">Hours: {b.hours}</p>
                 </div>
               ))}
