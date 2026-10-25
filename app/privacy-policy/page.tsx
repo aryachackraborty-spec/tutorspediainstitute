@@ -4,6 +4,9 @@ import PageHeader from "@/components/shared/PageHeader";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy Policy for Tutorspedia Institute. Read about how we handle, collect, and protect your data.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {

@@ -5,6 +5,9 @@ import { CONTACT } from "@/constants/data";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description: "Terms and Conditions of service for Tutorspedia Institute, Kolkata.",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsPage() {

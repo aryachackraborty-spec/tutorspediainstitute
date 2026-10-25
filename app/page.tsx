@@ -12,8 +12,11 @@ import AdmissionCTA from "@/components/home/AdmissionCTA";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_TAGLINE } from "@/constants/data";
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} | ${SITE_TAGLINE}`,
-  description: SITE_DESCRIPTION,
+  title: {
+    absolute: `${SITE_NAME} | CBSE, ICSE & School Coaching in Kolkata`,
+  },
+  description:
+    "Explore school coaching for Nursery–Class 12, CBSE/ICSE tuition and skill-development courses at Tutorspedia Institute's Kolkata branches in Dum Dum Park and Satgachi.",
   alternates: { canonical: "/" },
   verification: {
     google: "K-2embh5LRSWXteIGleNR8r4NkKtI0LHhG5zb7KrPZo",

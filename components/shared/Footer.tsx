@@ -23,12 +23,12 @@ const footerLinks = {
     { label: "Admissions", href: "/admissions" },
   ],
   courses: [
-    { label: "Primary Coaching", href: "/courses#primary" },
-    { label: "Secondary Coaching", href: "/courses#secondary" },
-    { label: "Higher Secondary", href: "/courses#higher" },
-    { label: "Brain Stimulation", href: "/courses#brain" },
-    { label: "Abacus & Maths", href: "/courses#abacus" },
-    { label: "AI for Kids", href: "/courses#ai" },
+    { label: "Academic Coaching", href: "/courses/academic-coaching" },
+    { label: "Abacus & Mental Maths", href: "/courses/abacus-mental-maths" },
+    { label: "Robotics, AI & Coding", href: "/courses/robotics-ai-coding" },
+    { label: "Spoken English & Languages", href: "/courses/spoken-english-languages" },
+    { label: "Public Speaking & Debate", href: "/courses/public-speaking" },
+    { label: "All Programmes", href: "/courses" },
   ],
   policies: [
     { label: "Privacy Policy", href: "/privacy-policy" },
@@ -199,10 +199,13 @@ export default function Footer() {
             <div className="space-y-4 text-xs text-gray-400">
               {BRANCHES.map((b) => (
                 <div key={b.id} className="border-b border-gray-800 pb-3 last:border-0 last:pb-0">
-                  <div className="font-bold text-white text-xs mb-1 flex items-center gap-1.5">
-                    <MapPin size={13} className="text-primary-400 shrink-0" />
-                    <span>{b.name}</span>
-                  </div>
+                  <Link
+                    href={b.branchUrl}
+                    className="font-bold text-white hover:text-primary-400 text-xs mb-1 flex items-center gap-1.5 transition-colors group"
+                  >
+                    <MapPin size={13} className="text-primary-400 shrink-0 group-hover:text-primary-300" />
+                    <span className="group-hover:underline">{b.name}</span>
+                  </Link>
                   <p className="text-gray-400 leading-relaxed mb-1.5">{b.address}</p>
                   <div className="flex items-center gap-2 mb-1 text-[11px]">
                     <Phone size={12} className="text-emerald-400 shrink-0" />
@@ -214,7 +217,15 @@ export default function Footer() {
                       {b.secondaryPhone}
                     </a>
                   </div>
-                  <p className="text-amber-400 text-[11px] font-medium">Hours: {b.hours}</p>
+                  <p className="text-amber-400 text-[11px] font-medium mb-1.5">Hours: {b.hours}</p>
+                  <div>
+                    <Link
+                      href={b.branchUrl}
+                      className="text-[11px] text-primary-400 hover:text-primary-300 hover:underline inline-flex items-center gap-1 font-medium"
+                    >
+                      Branch Details & Directions →
+                    </Link>
+                  </div>
                 </div>
               ))}
               <div className="pt-2 flex flex-col gap-1 text-xs">

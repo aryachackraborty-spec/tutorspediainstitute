@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface PageHeaderProps {
@@ -29,13 +30,25 @@ export default function PageHeader({
       <div className="absolute inset-0 bg-gradient-to-b from-primary-900/80 via-primary-900/70 to-primary-900/90" />
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
         {breadcrumb && (
-          <nav className="mb-4 flex items-center gap-2 text-white/60 text-sm">
+          <nav className="mb-4 flex items-center gap-2 text-white/60 text-sm" aria-label="Breadcrumb">
             {breadcrumb.map((item, i) => (
               <span key={i} className="flex items-center gap-2">
                 {i > 0 && <span>/</span>}
-                <span className={cn(i === breadcrumb.length - 1 && "text-white")}>
-                  {item.label}
-                </span>
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "hover:text-white transition-colors underline-offset-4 hover:underline",
+                      i === breadcrumb.length - 1 && "text-white"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className={cn(i === breadcrumb.length - 1 && "text-white")}>
+                    {item.label}
+                  </span>
+                )}
               </span>
             ))}
           </nav>

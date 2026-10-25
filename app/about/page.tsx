@@ -19,8 +19,10 @@ import PageHeader from "@/components/shared/PageHeader";
 import SectionHeading from "@/components/shared/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: "Learn about Tutorspedia Institute — our story, mission, vision, teaching philosophy, and the dedicated team behind our students' success.",
+  title: "About Us | Tutorspedia Institute Kolkata",
+  description:
+    "Learn about Tutorspedia Institute — our 10+ years journey, concept-based teaching philosophy, expert faculty, and student success across Kolkata campuses.",
+  alternates: { canonical: "/about" },
 };
 
 const values = [
